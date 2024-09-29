@@ -152,14 +152,11 @@ nav a:focus {
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 .container div:first-child {
-  background-size: cover;
-  /* takes all columns */
-  background-image: url('../images/header.jpg');
-  /* image */
-  background-repeat: no-repeat;
-  /* no repeat */
-  background-attachment: fixed;
-  /* paraallax */
+  grid-column: 1 / -1;
+  background-size: cover; /* takes all columns */
+  background-image: url('../images/header.jpg'); /* image */
+  background-repeat: no-repeat; /* no repeat */
+  background-attachment: fixed; /* paraallax */
 }
 
 
@@ -167,51 +164,45 @@ first div in the grid  and place it in the grid. */
  four rows in the grid. */
 
 /*This will be a lot of rules.... but be strategic and combine seletors*/
-.about {
+.about, .method, .clients, .contact {
   grid-column: 2 / 3;
+}
+
+.about {
   grid-row-start: 2;
 }
 
 .method {
-  grid-column: 2 / 3;
   grid-row-start: 3;
 }
 
 .clients {
-  grid-column: 2 / 3;
   grid-row-start: 4;
 }
 
 .contact {
-  grid-column: 2 / 3;
   grid-row-start: 5;
 }
 
-.about-image {
+.about-image, .method-image, .clients-image, .contact-image {
   grid-column: 1 / -1;
   max-height: 600px;
   overflow: hidden;
+}
+
+.about-image {
   grid-row-start: 2;
 }
 
 .method-image {
-  grid-column: 1 / -1;
-  max-height: 600px;
-  overflow: hidden;
   grid-row-start: 3;
 }
 
 .clients-image {
-  grid-column: 1 / -1;
-  max-height: 600px;
-  overflow: hidden;
   grid-row-start: 4;
 }
 
 .contact-image {
-  grid-column: 1 / -1;
-  max-height: 600px;
-  overflow: hidden;
   grid-row-start: 5;
 }
 
@@ -220,11 +211,8 @@ first div in the grid  and place it in the grid. */
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: auto;
 }
-
-
-
-
 
 
 /* Add your media query here */
